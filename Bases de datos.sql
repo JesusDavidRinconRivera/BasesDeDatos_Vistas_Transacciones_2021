@@ -135,6 +135,8 @@ Create view Extrangeros AS
   select ciudad,nombre,apellido
   FROM Hoteles
   WHERE ciudad!='cartagena';
+  ------------------------Subconsulta--------------------------------------------
+  select nombre as Cartageneros from hoteles where ciudad = 'cartagena' ;
 
 --------------------------------Ver Vista-----------------
 select * FROM  Hoteles;
@@ -158,3 +160,9 @@ select * from Vuelo_turista;
 ROLLBACK;
 ----Ejecutar cambios------
 commit;
+
+
+----------------------------------Join---------------------------------
+select * from Cartagena A join hoteles B on A.nombre = B.nombre;
+select * from Cartagena A LEFT  JOIN hoteles B on A.nombre = B.nombre;
+select * from Cartagena A FULL OUTER Join  hoteles B on A.nombre = B.nombre;
